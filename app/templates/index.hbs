@@ -1,9 +1,10 @@
+
 <h1> Welcome to Super Rentals </h1>
 
 We hope you find exactly what you're looking for in a place to stay.
 
 <ul>
-  {{#each model as |rental|}}
+  {{#each rentals as |rental|}}
     {{rental-tile rental=rental destroyRental="destroyRental"}}
   {{/each}}
 </ul>
@@ -12,3 +13,12 @@ We hope you find exactly what you're looking for in a place to stay.
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
+
+<h2>Announcements</h2>
+<ul>
+  {{#each announcements as |announcement|}}
+    {{announcement-tile announcement=announcement destroyAnnouncement="destroyAnnouncement"}}
+  {{/each}}
+</ul>
+
+{{new-announcement emitSave="saveAnnouncement"}}
