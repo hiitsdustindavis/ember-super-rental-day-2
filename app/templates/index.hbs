@@ -1,24 +1,26 @@
+<div class="container">
+  <div class="header">
+    <h1> Welcome to Super Rentals </h1>
+    We hope you find exactly what you're looking for in a place to stay.
+  </div>
 
-<h1> Welcome to Super Rentals </h1>
+  <ul class="rental-tile">
+    {{#each rentals as |rental|}}
+    {{rental-tile rental=rental}}
+    {{/each}}
+  </ul>
 
-We hope you find exactly what you're looking for in a place to stay.
+  {{new-rental save2="save3"}}
 
-<ul>
-  {{#each rentals as |rental|}}
-    {{rental-tile rental=rental update="update" destroyRental="destroyRental"}}
-  {{/each}}
-</ul>
+  {{#link-to 'about'}}About{{/link-to}}
+  {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
 
-{{new-rental save2="save3"}}
-
-{{#link-to 'about'}}About{{/link-to}}
-{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
-
-<h2>Announcements</h2>
-<ul>
-  {{#each announcements as |announcement|}}
+  <h2>Announcements</h2>
+  <ul>
+    {{#each announcements as |announcement|}}
     {{announcement-tile announcement=announcement destroyAnnouncement="destroyAnnouncement"}}
-  {{/each}}
-</ul>
+    {{/each}}
+  </ul>
 
-{{new-announcement emitSave="saveAnnouncement"}}
+  {{new-announcement emitSave="saveAnnouncement"}}
+</div>
