@@ -1,0 +1,9 @@
+<p>{{city.name}}'s Details</p>
+<p>Country: {{city.country}}</p>
+<hr>
+<p>Rentals available in {{city.name}}</p>
+<ul>
+  {{#each model.rentals as |rental|}}
+    {{rental-tile rental=rental}}
+  {{/each}}
+</ul>

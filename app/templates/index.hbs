@@ -1,12 +1,12 @@
 
   <ul class="rental-tile">
     {{#each model.rentals as |rental|}}
-    {{rental-tile rental=rental}}
+      {{rental-tile rental=rental}}
     {{/each}}
   </ul>
 
-  {{new-rental save2="save3"}}
-  {{new-city addNewCity2="addNewCity3"}}
+
+  {{new-city addNewCity2="addNewCity3" city=model}}
   <h2> Cities </h2>
 
   <ul>
