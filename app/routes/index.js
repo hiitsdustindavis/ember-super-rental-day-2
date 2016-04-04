@@ -2,15 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return Ember.RSVP.hash({
+    return Ember.RSVP.hash({ //RSVP Hash is a promise method. It says "don't fire until my contents are completed"
       rentals: this.store.findAll('rental'),
-      announcements: this.store.findAll('announcement')
+      announcements: this.store.findAll('announcement'),
+      cities: this.store.findAll('city')
     });
-  },
-
-  setupController(controller, model) {
-    Ember.set(controller, 'rentals', model.rentals);
-    Ember.set(controller, 'announcements', model.announcements);
   },
 
   actions: {

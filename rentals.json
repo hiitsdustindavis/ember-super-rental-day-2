@@ -20,9 +20,15 @@
   "announcements": [{
     "title": "Site Launch",
     "content": "Wow! This site is running. Cool!"
-  },
-  {
+  }, {
     "title": "Free lunch",
     "content": "All Super Rentals employees get free lunch"
+  }],
+  "cities": [{
+    "name": "Portland",
+    "country": "USA"
+  }, {
+    "name": "Seattle",
+    "country": "USA"
   }]
 }

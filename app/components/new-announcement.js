@@ -12,7 +12,7 @@ export default Ember.Component.extend({
         title: this.get('title'),
         content: this.get('content'),
       };
-      this.set('addNewAnnouncement', false),
+      this.set('addNewAnnouncement', false);
       this.sendAction('emitSave', params);
     }
   }
