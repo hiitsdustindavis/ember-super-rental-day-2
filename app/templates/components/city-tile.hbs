@@ -3,7 +3,11 @@
 <hr>
 <p>Rentals available in {{city.name}}</p>
 <ul>
-  {{#each model.rentals as |rental|}}
-    {{rental-tile rental=rental}}
+  {{#each city.rental as |rental|}}
+    <li>
+      {{#link-to 'rental' rental.id}}
+        {{rental.owner}}{{rental.type}}
+      {{/link-to}}
+    </li>
   {{/each}}
 </ul>
