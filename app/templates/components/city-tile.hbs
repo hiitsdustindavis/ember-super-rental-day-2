@@ -1,12 +1,14 @@
 <p>{{city.name}}'s Details</p>
 <p>Country: {{city.country}}</p>
+<button {{action 'delete' city}}>Delete City</button>
 <hr>
 <p>Rentals available in {{city.name}}</p>
+
 <ul>
-  {{#each city.rental as |rental|}}
+  {{#each city.rental as |rental|}} <!-- Loops through each rental of a specific city. The city-tile template resides on the city route. So, at this point the city has already been selected from the index and will display any rentals that belong to that city. -->
     <li>
-      {{#link-to 'rental' rental.id}}
-        {{rental.owner}}{{rental.type}}
+      {{#link-to 'rental' rental.id}} <!-- This link-to takes you to the rental-detail template -->
+        {{rental.owner}}{{rental.type}} <!-- The each loop is looping through rentals of a city. To display the Owner and Type property of the Rental object we call them with dot notation. I thought it might have to be "city.rental.owner" but it's not. -->
       {{/link-to}}
     </li>
   {{/each}}
